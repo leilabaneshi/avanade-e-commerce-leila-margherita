@@ -1,0 +1,8 @@
+{
+  "name": "margherita",
+  "surname": "testi",
+  "shippingAddress" : {
+    "city": "bologna",
+    "street": "via independeza"
+  }
+}
