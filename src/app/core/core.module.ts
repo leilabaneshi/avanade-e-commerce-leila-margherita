@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -11,10 +13,14 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
   exports: [
-    NavbarComponent
+    NavbarComponent,
+    HttpClientModule,
+    ToastrModule
   ]
 })
 export class CoreModule { }
