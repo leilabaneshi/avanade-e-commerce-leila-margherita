@@ -1,12 +1,8 @@
 import { WelcomeComponent } from './../welcome/welcome.component';
 import { Welcome } from 'src/app/model/home';
+import { Component, Input, OnInit } from '@angular/core';
 
 
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
-import { User } from 'src/app/core/models/user';
-import { UserService } from 'src/app/core/services/user.services';
 
 @Component({
   selector: 'app-home',
@@ -26,9 +22,6 @@ import { UserService } from 'src/app/core/services/user.services';
 })
 
 export class HomeComponent implements OnInit {
-  [x: string]: any;
-  user : User | null = null;
-  params: string = '';
 
 
   welcome : Welcome [] = [
@@ -40,33 +33,16 @@ export class HomeComponent implements OnInit {
 
   images = [
     'https://picsum.photos/id/1073/355/355',
-    'https://picsum.photos/id/365/355/355',
-    'https://picsum.photos/id/24/355/355'
+    'https://picsum.photos/id/365/350/350',
+    'https://picsum.photos/id/24/350/350'
 
 
   ]
   constructor() {
 
-  constructor(private route: ActivatedRoute, private userService: UserService) {
-    console.log(route.snapshot.queryParamMap);
   }
 
   ngOnInit(): void {
-    //this.route.snapshot.params
-     this.route.queryParams.subscribe(params => {
-      console.log(params)
-      this.params = params.user;
-      this.userService.getUser(this.params).subscribe((data)=>{
-        this.user= data;
-        console.log("user->", this.user);
-      }, error => {
-        // serve per gestire errori della chiamata
-      })
-    })
-
-
   }
 
-
-}
 }

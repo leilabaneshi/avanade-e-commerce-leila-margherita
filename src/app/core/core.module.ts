@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -13,9 +14,10 @@ import { ToastrModule } from 'ngx-toastr';
   ],
   imports: [
     CommonModule,
+    BrowserAnimationsModule,
     RouterModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   exports: [
     NavbarComponent,
