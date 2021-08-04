@@ -16,13 +16,14 @@ export class HomeComponent implements OnInit {
 user : User | null = null;
 params: string = '';
 
-  constructor(private route: ActivatedRoute, private userService: UserService) {
+  constructor(private route: ActivatedRoute,
+              private userService: UserService) {
     console.log(route.snapshot.queryParamMap);
   }
 
   ngOnInit(): void {
-
-    this.route.queryParams.subscribe(params => {
+    //this.route.snapshot.params
+     this.route.queryParams.subscribe(params => {
       console.log(params)
       this.params = params.user;
       this.userService.getUser(this.params).subscribe((data)=>{
