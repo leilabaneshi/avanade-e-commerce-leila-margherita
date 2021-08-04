@@ -6,8 +6,8 @@ import  { Component, EventEmitter, Input} from '@angular/core';
   template: `
 
     <div class="container">
-      <div style="margin: auto; padding: 1px;">
-        <img *ngFor="let img of images" [src]="img" />
+      <div style="margin: auto;">
+        <img *ngFor="let img of images" [src]="img" style="margin: 2px"/>
       </div>
     </div>
   `

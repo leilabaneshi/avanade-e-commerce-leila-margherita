@@ -12,7 +12,7 @@ import { Welcome } from 'src/app/model/home';
       </h2>
       <hr>
       <blockquote class="blockquote" style="text-align: right;">
-        <p class="mb-1  text-right">{{ w.text }}</p>
+        <p class="mb-1  text-right" style="font-style:italic;">{{ w.text }}</p>
         <footer class="blockquote-footer  text-right">Someone famous</footer>
       </blockquote>
 
