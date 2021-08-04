@@ -1,12 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/core/models/products';
 import { ProductService } from 'src/app/core/services/product.service';
+import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-catalog',
   template: `
 
     <div class="container">
+      <div class="mt-3">
+        <form [formGroup]= "myForm" (ngSubmit)="save()">
+
+          <input type="text" [formControl]="search"
+          #searchInput class="form-control form-control-sm"
+          placeholder="Search a book" >
+
+          <hr>
+
+          <select class="form-select"  name="cat" formControlName="cat">
+            <option *ngFor="let prod of products" value="{{prod.category}}">
+              {{prod.category}}
+            </option>
+          </select>
+
+            <button class="btn btn-danger mt-2" type="submit" [disabled]="!myForm.valid">Search</button>
+
+        </form>
+
+      </div>
+
       <div class="mt-3">
         <h5 style="text-align: center;" class="list-group-item">
           Your favourite Books <span class="text-dark mx-2"><i class="fa fa-heart"></i></span>
@@ -29,7 +52,6 @@ import { ProductService } from 'src/app/core/services/product.service';
         <router-outlet></router-outlet>
       </div>
 
-
     </div>
 
 
@@ -38,12 +60,33 @@ import { ProductService } from 'src/app/core/services/product.service';
   ]
 })
 export class CatalogComponent implements OnInit {
-products : Product [] | null = null
 
-  constructor(private productservice: ProductService) { }
+  products : Product [] | null = null
+  myForm!: FormGroup;
+  search!: FormControl;
 
-  ngOnInit(): void {
-    this.products = this.productservice.products
+
+
+  constructor(private productservice: ProductService,
+  private fb: FormBuilder) {}
+
+  ngOnInit(){
+      this.products = this.productservice.products;
+
+      this.myForm = this.fb.group({
+
+        search: ['', Validators.compose([
+          Validators.required, Validators.minLength(2)])],
+        cat: ['', [Validators.required]]
+      })
+
+    }
+
+  save() :void {
+    const fields = this.myForm?.value;
+    console.log(`Search: ${fields.search} - ${fields.text}`);
   }
 
 }
+
+
