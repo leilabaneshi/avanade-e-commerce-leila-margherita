@@ -1,3 +1,6 @@
+import { CarouselModule } from './../../core/components/carousel.module';
+import { WelcomeComponent } from './../welcome/welcome.component';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -7,11 +10,13 @@ import { HomeComponent } from './home.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    WelcomeComponent
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    CarouselModule
   ]
 })
 export class HomeModule { }

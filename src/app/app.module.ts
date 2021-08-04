@@ -1,3 +1,5 @@
+
+import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -16,7 +18,8 @@ import { FeaturesModule } from './features/features.module';
     AppRoutingModule,
     CoreModule,
     SharedModule,
-    FeaturesModule
+    FeaturesModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
