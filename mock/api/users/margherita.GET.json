@@ -1,8 +1,9 @@
 {
-  "name": "margherita",
-  "surname": "testi",
+  "name": "Margherita",
+  "surname": "Will",
   "shippingAddress" : {
-    "city": "bologna",
-    "street": "via independenza"
+    "street": "4509 Abernathy Port",
+    "city" : "Port Charles",
+    "zipCode": "26322"
   }
 }

@@ -10,7 +10,8 @@ import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
-    NavbarComponent
+    NavbarComponent,
+
   ],
   imports: [
     CommonModule,

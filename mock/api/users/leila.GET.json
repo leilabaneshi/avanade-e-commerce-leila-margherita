@@ -1,7 +1,9 @@
 {
-  "name": "leila",
-  "surname": "baneshi",
+  "name": "Leila",
+  "surname": "Baneshi",
   "shippingAddress" : {
-
+    "street": "56363 Goyette Station",
+    "city" : "West Floydmouth",
+    "zipCode": "73634-6751"
   }
 }

@@ -25,6 +25,12 @@ export class UserService {
       );
   }
 
+//   getProducts(): Observable<User[]> {
+//     return this.http.get<User[]>(this.productBaseUrl).pipe(
+//         tap(data => console.log('All', JSON.stringify(data))),
+//         catchError(this.handleError)
+//     );
+// }
   handleError(err: HttpErrorResponse) {
 
       let errorMessage = '';

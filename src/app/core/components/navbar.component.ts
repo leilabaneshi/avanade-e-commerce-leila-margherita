@@ -1,4 +1,7 @@
+import { CartService } from 'src/app/core/services/cart.service';
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { ProductService } from '../services/product.service';
 
 
 @Component({
@@ -33,7 +36,14 @@ import { Component, OnInit } from '@angular/core';
             <li class="nav-item"
             routerLink="/cart" routerLinkActive="active"
             >
-              <a class="nav-link text-white"><span class="mx-1"><i class="fa fa-shopping-cart"></i></span>Cart</a>
+
+              <a class="nav-link text-white">
+                <span class="mx-1"><i class="fa fa-shopping-cart"></i></span>Cart
+                <span class="position-absolute top-20 start-40 translate-middle badge square-pill bg-danger" style="font-size: 0.50em; margin: 0.7em;" >{{count}}
+                          <span class="visually-hidden">Adding a book to your cart</span>
+                      </span>
+              </a>
+
             </li>
 
 
@@ -49,9 +59,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  count: number = 0;
 
-  ngOnInit(): void {
+  clickItemSubscription:Subscription| undefined;
+  constructor(private cartService: CartService)
+  {
+    this.clickItemSubscription = this.cartService.getCartItemEvent().subscribe(()=>{
+      this.countItem();
+    });
   }
 
-}
+  countItem(){
+    this.count += 1;
+  }
+
+  ngOnInit(): void {
+
+  }
+
+ }

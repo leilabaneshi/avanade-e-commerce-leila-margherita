@@ -4,10 +4,10 @@ import { CatalogComponent } from './catalog.component';
 //import { ProductDetailsComponent } from './product-details/product-details.component';
 
 const routes: Routes = [{ path: '', component: CatalogComponent ,
-children : [
+// children : [
 
-  { path: 'productDetails', loadChildren: () => import('./product-details/product-details.module').then(m => m.ProductDetailsModule) }
-]
+//   { path: 'productDetails', loadChildren: () => import('./product-details/product-details.module').then(m => m.ProductDetailsModule) }
+// ]
 
 
 }];

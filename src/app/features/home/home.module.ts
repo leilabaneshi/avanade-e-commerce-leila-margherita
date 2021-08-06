@@ -1,5 +1,5 @@
 import { CarouselModule } from './../../core/components/carousel.module';
-import { WelcomeComponent } from './../welcome/welcome.component';
+import { WelcomeComponent } from '../welcome/welcome.component';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';

@@ -1,21 +1,21 @@
-import { WelcomeComponent } from './../welcome/welcome.component';
-import { Welcome } from 'src/app/model/home';
+import { UserService } from 'src/app/core/services/user.services';
+
+import { Welcome } from 'src/app/core/models/home';
 import { Component, Input, OnInit } from '@angular/core';
 
 
 
 @Component({
   selector: 'app-home',
-  template: `
-    <div class="container mt-3">
+  template:  `
+      <div class="container mt-3">
 
         <app-welcome [items]="welcome"></app-welcome>
         <div class="mt-2">
-        <carousel [images]="images"></carousel>
+          <carousel [images]="images"></carousel>
         </div>
 
-    </div>
-
+      </div>
   `,
   styles: [
   ]

@@ -1,0 +1,30 @@
+<!-- <div>
+  <button routerLink="./checkout" routerLinkActive="btn-outline-warning" class="btn btn-primary">checkout</button>
+  </div> -->
+   <div class="container">
+     <router-outlet></router-outlet>
+
+     <div class="row">
+      <div class="card border-danger mb-3" style="max-width: 540px; margin: auto">
+        <div class="row no-gutters">
+          <hr>
+          <div class="col-md-8">
+            <div class="card-body text-dark">
+              <h5 class="card-title text-danger">Your selected Book:</h5>
+              <hr>
+              <div *ngFor="let prod of products">
+                <h6 class="card-text text-dark">{{ prod.title }}</h6>
+                <p class="card-text text-smaller">{{ prod.price | currency }} </p>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+
+
+
+
